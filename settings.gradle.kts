@@ -18,8 +18,12 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-
-rootProject.name = "MarvelApp"
+gradle.rootProject {
+    plugins.withType<JavaPlugin> {
+        the<JavaPluginExtension>().toolchain.languageVersion.set(JavaLanguageVersion.of(17))
+    }
+}
+rootProject.name = "DriverApp"
 include(":app")
 include(":data")
 include(":domain")

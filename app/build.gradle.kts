@@ -8,11 +8,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.marvelapp"
+    namespace = "com.example.driverapp"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.marvelapp"
+        applicationId = "com.example.driverapp"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -33,18 +33,23 @@ android {
             )
         }
     }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
-    kotlinOptions {
-        jvmTarget = "1.8"
+//    compileOptions {
+//        sourceCompatibility = JavaVersion.VERSION_17
+//        targetCompatibility = JavaVersion.VERSION_17
+//    }
+//    kotlinOptions {
+//        jvmTarget = "17"
+//    }
+    java {
+        toolchain {
+            languageVersion.set(JavaLanguageVersion.of(17))
+        }
     }
     buildFeatures {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.1"
+        kotlinCompilerExtensionVersion = "1.5.10"
     }
     packaging {
         resources {
@@ -53,6 +58,9 @@ android {
     }
     kapt {
         correctErrorTypes = true // Helps with annotation errors
+        javacOptions {
+            option("-J--add-exports=jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED")
+        }
     }
 //    viewBinding {
 //        enabled = true
@@ -98,7 +106,7 @@ dependencies {
 
     // Glide
     implementation(libs.glide)
-    annotationProcessor(libs.glide.compiler)
+    kapt (libs.glide.compiler)
     // Coil
     implementation(libs.coil.compose)
     // navigation compose
