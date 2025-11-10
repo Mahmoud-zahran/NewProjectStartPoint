@@ -2,8 +2,8 @@ package com.example.almoqayem.di
 
 import okhttp3.Interceptor
 import okhttp3.Response
-import java.security.MessageDigest
 import java.util.Date
+import com.example.almoqayem.utils.md5
 
 class ApiKeyInterceptor(
     private val publicKey: String,
@@ -17,7 +17,7 @@ class ApiKeyInterceptor(
         // Timestamp (can be current time in milliseconds or any string)
         val ts = Date().time.toString()
 
-        // Generate hash using MD5
+        // Generate hash using MD5 (moved to HashUtils.md5)
         val hash = md5("$ts$privateKey$publicKey")
 
         // Add required query parameters
@@ -34,12 +34,5 @@ class ApiKeyInterceptor(
             .build()
 
         return chain.proceed(requestWithParams)
-    }
-
-    // Helper function to generate MD5 hash
-    private fun md5(string: String): String {
-        val md = MessageDigest.getInstance("MD5")
-        val digest = md.digest(string.toByteArray())
-        return digest.joinToString("") { "%02x".format(it) }
     }
 }
