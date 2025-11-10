@@ -11,6 +11,7 @@ using the best practices combining the following techs to achieve the goal of th
 * Retrofit
 * Coil for loading images
 * Hilt for Dependency Injection
+* Unit Testing 
 
 **App Description**
 
