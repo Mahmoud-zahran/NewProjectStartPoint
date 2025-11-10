@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.driverapp.ui.theme
+package com.example.almoqayem.ui.theme
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Shapes

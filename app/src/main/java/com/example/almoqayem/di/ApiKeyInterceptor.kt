@@ -1,4 +1,4 @@
-package com.example.driverapp.di
+package com.example.almoqayem.di
 
 import okhttp3.Interceptor
 import okhttp3.Response
@@ -29,7 +29,7 @@ class ApiKeyInterceptor(
 
         // Build the new request
         val requestWithParams = originalRequest.newBuilder()
-            .header("User-Agent", "DriverApp")
+            .header("User-Agent", "AlmoqayemApp")
             .url(urlWithParams)
             .build()
 

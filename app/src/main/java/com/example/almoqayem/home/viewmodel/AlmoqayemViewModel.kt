@@ -1,10 +1,10 @@
-package com.example.driverapp.home.viewmodel
+package com.example.almoqayem.home.viewmodel
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.domain.model.BaseResponse
-import com.example.domain.usecase.GetDriverUseCase
+import com.example.domain.usecase.GetAlmoqayemUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -12,11 +12,11 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 import com.example.domain.model.Result
 
-const val TAG ="DriverViewModel"
+const val TAG ="AlmoqayemViewModel"
 
 @HiltViewModel
-class DriverViewModel @Inject constructor(
-    private val getDriverUseCase: GetDriverUseCase,
+class AlmoqayemViewModel @Inject constructor(
+    private val getAlmoqayemUseCase: GetAlmoqayemUseCase,
 ): ViewModel() {
 
     private val _characters: MutableStateFlow<Result<BaseResponse<Int>>?> = MutableStateFlow(null)
@@ -27,7 +27,7 @@ class DriverViewModel @Inject constructor(
         viewModelScope.launch {
             _characters.value = Result.Loading  // Set loading state
             try {
-                val result = getDriverUseCase()
+                val result = getAlmoqayemUseCase()
                 _characters.value = result
                 Log.d(TAG, "getCharacters: $result")
             } catch (e: Exception) {

@@ -1,4 +1,4 @@
-package com.example.driverapp.ui.theme
+package com.example.almoqayem.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
@@ -80,7 +80,7 @@ private val DarkColors = darkColorScheme(
     outline = md_theme_dark_outline
 )
 @Composable
-fun DriverAppTheme(
+fun AlmoqayemAppTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     content: @Composable() () -> Unit
 ) {

@@ -1,4 +1,4 @@
-package com.example.driverapp.home.ui
+package com.example.almoqayem.home.ui
 
 
 import android.annotation.SuppressLint
@@ -14,22 +14,21 @@ import androidx.compose.material3.windowsizeclass.WindowSizeClass
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
-import com.example.driverapp.ui.theme.DriverAppTheme
-import com.example.driverapp.home.viewmodel.DriverViewModel
+import com.example.almoqayem.ui.theme.AlmoqayemAppTheme
+import com.example.almoqayem.home.viewmodel.AlmoqayemViewModel
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3WindowSizeClassApi::class)
 @Composable
-fun DriverAppScreen(
-    viewModel: DriverViewModel = viewModel(),
+fun AlmoqayemAppScreen(
+    viewModel: AlmoqayemViewModel = viewModel(),
     windowSize: WindowSizeClass,
     navController: NavController
 ) {
-//    val driverCharactersState = viewModel.getCharacters().collectAsState()
 
 
 
-    DriverAppTheme {
+    AlmoqayemAppTheme {
         Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
             Greeting(
                 name = "Android",
@@ -51,7 +50,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
-    DriverAppTheme {
+    AlmoqayemAppTheme {
         Greeting("Android")
     }
 }

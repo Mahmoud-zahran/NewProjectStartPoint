@@ -1,4 +1,4 @@
-package com.example.driverapp.di
+package com.example.almoqayem.di
 
 import android.content.Context
 import coil.ImageLoader

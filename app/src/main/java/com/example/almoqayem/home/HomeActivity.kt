@@ -1,4 +1,4 @@
-package com.example.driverapp.home
+package com.example.almoqayem.home
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -8,13 +8,13 @@ import androidx.activity.viewModels
 import androidx.compose.material3.windowsizeclass.ExperimentalMaterial3WindowSizeClassApi
 import androidx.compose.material3.windowsizeclass.calculateWindowSizeClass
 import androidx.navigation.compose.rememberNavController
-import com.example.driverapp.home.ui.DriverAppScreen
-import com.example.driverapp.home.viewmodel.DriverViewModel
+import com.example.almoqayem.home.ui.AlmoqayemAppScreen
+import com.example.almoqayem.home.viewmodel.AlmoqayemViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class HomeActivity : ComponentActivity() {
-    private val driverViewModel: DriverViewModel by viewModels()
+    private val almoqayemViewModel: AlmoqayemViewModel by viewModels()
 
     @OptIn(ExperimentalMaterial3WindowSizeClassApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,16 +22,12 @@ class HomeActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             val navController = rememberNavController()
-            DriverAppScreen(
-                viewModel = driverViewModel,
+            AlmoqayemAppScreen(
+                viewModel = almoqayemViewModel,
                 windowSize = calculateWindowSizeClass(activity = this),
                 navController = navController
             )
         }
-
-//        lifecycleScope.launch {
-//            driverViewModel.getCharacters()
-//        }
 
     }
 }
