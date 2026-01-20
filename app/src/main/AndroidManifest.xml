@@ -11,14 +11,14 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:name=".AlmoqayemApp"
-        android:theme="@style/Theme.AlmoqayemApp"
+        android:name=".ProjectNameApp"
+        android:theme="@style/Theme.ProjectNameApp"
         tools:targetApi="31">
         <activity
             android:name=".home.HomeActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.AlmoqayemApp">
+            android:theme="@style/Theme.ProjectNameApp">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
