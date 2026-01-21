@@ -8,11 +8,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.almoqayem"
+    namespace = "com.example.projectname"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.almoqayem"
+        applicationId = "com.example.projectname"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

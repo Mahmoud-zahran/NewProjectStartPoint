@@ -23,7 +23,7 @@ gradle.rootProject {
         the<JavaPluginExtension>().toolchain.languageVersion.set(JavaLanguageVersion.of(17))
     }
 }
-rootProject.name = "AlmoqayemApp"
+rootProject.name = "ProjectName"
 include(":app")
 include(":data")
 include(":domain")
